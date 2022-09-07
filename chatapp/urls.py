@@ -8,7 +8,6 @@ urlpatterns = [
 
     # Project view
     path('', home, name= 'home'),
-    path('details/<str:pk>', details_post, name='details'),
     path('add', create_post, name='add'),
     path('approve', admin_approve, name='approve'),
     path('Answer-Approve', admin_approve_answer, name='answer'),

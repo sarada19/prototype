@@ -14,7 +14,7 @@ def home(request):
     return render(request, 'chatapp/index.html',{'answer': answer, 'post_count': post_count})
 
 def details_post(request, pk):
-    post = answers.objects.filter(question = pk)
+    post = answers.objects.filter(question__question = pk)
     return render(request, 'chatapp/details_post.html', {'post': post})
 
 def create_post(request):
