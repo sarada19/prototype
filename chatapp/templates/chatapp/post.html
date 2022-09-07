@@ -1,0 +1,33 @@
+{% block content %}
+
+<section class="vh-100 bg-image" style="background-color: light-gray">
+    <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+        <div class="container h-100">
+            <h1>Questions<h1>
+            <hr>
+            <div class="row">
+                {% for answer in answer %}
+                <div class="col">
+                    <a herf = "{% url 'details' answer.question %}" class="fw-bold text-body">
+                        <p>{{answer.question}}</p>
+                        <h3>{{answer.question.content}}</h3>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+<div class="ml-20 mr-20">
+    <h1 class="text-3xl lg:text-6xl text-black">Answer</h1>
+    <br>
+    {% for answer in answer %}
+        <pre>{{answer.answers}}</pre>
+        <p align='right'> Aswerd by {{answer.author}}</p>
+        <img src="media/{{answer.file}}">
+        
+    {% endfor %}
+</div>
+
+
+{% endblock %}
